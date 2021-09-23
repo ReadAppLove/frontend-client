@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
-import 'package:readapp/controllers/volume.dart';
 import 'package:readapp/controllers/volume_category.dart';
 import 'package:readapp/models/volume.dart';
 import 'package:readapp/widgets/volume_card.dart';
@@ -25,7 +24,10 @@ class VolumesScrollableRow extends StatelessWidget {
               snapshot.data?.forEach((volume) {
                 children.add(
                   Padding(
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.only(
+                      left: 15,
+                      right: 15,
+                    ),
                     child: VolumeCard(imageUrl: volume.volumeInfo.thumbnailUrl),
                   )
                 );
