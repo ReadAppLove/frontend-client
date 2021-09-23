@@ -18,16 +18,19 @@ class VolumeCard extends StatelessWidget{
       ),
       child: FittedBox(
         fit: BoxFit.fill,
-        child: CachedNetworkImage(
-          imageUrl: imageUrl,
-          placeholder: (context, url) => const Center(
-            child: SizedBox(
-              height: 100,
-              width: 100,
-              child: CircularProgressIndicator(),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          child: CachedNetworkImage(
+            imageUrl: imageUrl,
+            placeholder: (context, url) => const Center(
+              child: SizedBox(
+                height: 120,
+                width: 170,
+                child: CircularProgressIndicator(),
+              ),
             ),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );
