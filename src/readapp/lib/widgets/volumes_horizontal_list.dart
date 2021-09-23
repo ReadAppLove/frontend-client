@@ -4,7 +4,7 @@ class VolumesHorizontalWidget extends StatelessWidget{
 
   final List<int> volumes;
 
-  VolumesHorizontalWidget(this.volumes, {Key? key}) : super(key: key);
+  const VolumesHorizontalWidget(this.volumes, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
