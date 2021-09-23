@@ -1,0 +1,1 @@
+const String GATEWAY_URL = 'igt840fps4.execute-api.eu-central-1.amazonaws.com';
