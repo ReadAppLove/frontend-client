@@ -28,7 +28,7 @@ class VolumesScrollableRow extends StatelessWidget {
                       left: 15,
                       right: 15,
                     ),
-                    child: VolumeCard(imageUrl: volume.volumeInfo.thumbnailUrl),
+                    child: VolumeCard(volume: volume),
                   )
                 );
               });

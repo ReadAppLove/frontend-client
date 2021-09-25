@@ -16,20 +16,10 @@ class HomepageScreenState extends State<HomepageScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
-      children: <Widget>[
-        const Header(
+      children: const <Widget>[
+        Header(
             imageUri: 'assets/images/homepage_header.jpg',
             title: 'Benvenuto'),
-        MaterialButton(
-          child: const Text('Search'),
-          color: Colors.blueAccent,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ExploreScreen()),
-            );
-          },
-        )
       ],
     );
   }

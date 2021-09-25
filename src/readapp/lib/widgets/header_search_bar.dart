@@ -7,24 +7,42 @@ class HeaderSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const SearchScreen()),
-        )
-      },
-      child: ClipRRect(
-        borderRadius: const BorderRadius.all(Radius.circular(500)),
-        child: Container(
-          padding:
-              const EdgeInsets.only(top: 15, right: 15, bottom: 15, left: 15),
-          width: MediaQuery.of(context).size.width * .9,
-          color: const Color.fromRGBO(255, 255, 255, .9),
-          child: const Text(
-            'Cerca...',
-            style: TextStyle(color: Color.fromRGBO(150, 150, 150, 1.0)),
+    return ClipRRect(
+      borderRadius: const BorderRadius.all(Radius.circular(500)),
+      child: Container(
+        width: MediaQuery.of(context).size.width * .9,
+        color: const Color.fromRGBO(255, 255, 255, .9),
+        child: TextFormField(
+          textInputAction: TextInputAction.search,
+          onFieldSubmitted: (String searchQuery) => {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => SearchScreen(searchQuery: searchQuery)),
+            )
+          },
+          decoration: const InputDecoration(
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
+            contentPadding:
+                EdgeInsets.only(left: 15, bottom: 11, top: 15, right: 15),
+            hintText: 'Cerca...',
+            prefixIcon: Icon(
+              Icons.search,
+            ),
           ),
+          style: const TextStyle(
+            color: Colors.black,
+          ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter some text';
+            }
+            return null;
+          },
         ),
       ),
     );
