@@ -14,7 +14,8 @@ class H2Title extends StatelessWidget{
       style: const TextStyle(
         color: accentColor,
         fontSize: 20,
-        fontWeight: FontWeight.bold
+        fontWeight: FontWeight.bold,
+        overflow: TextOverflow.ellipsis
       )
     );
   }
