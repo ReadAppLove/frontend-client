@@ -7,10 +7,10 @@ class VolumeInfo {
   VolumeInfo(this.title, this.publisher, this.description, this.thumbnailUrl);
 
   VolumeInfo.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
-        publisher = json['publisher'],
-        description = json['description'],
-        thumbnailUrl = json['imageLinks']['thumbnail'];
+      : title = json['title'] ?? 'No title',
+        publisher = json['publisher'] ?? 'No publisher',
+        description = json['description'] ?? 'No description',
+        thumbnailUrl = json['imageLinks']?['thumbnail'] ?? 'https://picsum.photos/120/170';
 
   Map<String, dynamic> toJson() => {
     'title': title,
